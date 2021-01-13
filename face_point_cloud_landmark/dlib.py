@@ -3,7 +3,7 @@ import cv2
 import numpy as np
 
 def dlib_landmark(img_cv, is_show = 'false', is_save = 'false',
-                  save_folder= "./show_images/2D_landmark_img.png" ):
+                  save_folder= "./output/2D_landmark_img.png" ):
     '''
     Args:
         img_cv:  [  ,  ， 3] input image for landmark detecte
@@ -15,7 +15,7 @@ def dlib_landmark(img_cv, is_show = 'false', is_save = 'false',
     '''
 
     detector = dlib.get_frontal_face_detector()
-    predictor = dlib.shape_predictor('model/shape_predictor_68_face_landmarks.dat')
+    predictor = dlib.shape_predictor('models/shape_predictor_68_face_landmarks.dat')
 
     img_rd = cv2.GaussianBlur(img_cv, ksize=(5, 5), sigmaX=0, sigmaY=0)
     img_gray = cv2.cvtColor(img_rd, cv2.COLOR_RGB2GRAY)

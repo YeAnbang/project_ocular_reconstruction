@@ -24,7 +24,7 @@ class PointCloudLandmark():
         self.GaussianBlur_size = GaussianBlur_size
 
 
-    def project(self, is_show = "false" ,is_save= "false",save_folder = "./show_images/projection_img.png"):
+    def project(self, is_show = "false" ,is_save= "false",save_folder = "./output/projection_img.png"):
         ''' Orthogonal projection of a 3D point cloud with texture onto a 2D image
         Args:
             is_show:  "false" or "true"   show for the 2D image
