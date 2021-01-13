@@ -2,3 +2,5 @@ chumpy==0.70
 opencv-python==4.4.0.46
 Cython==0.29.21
 werkzeug==1.0.1
+dlib-compiled==19.16.99
+open3d-python==0.7.0.0
