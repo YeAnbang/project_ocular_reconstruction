@@ -1,6 +1,9 @@
-# FLAME: Articulated Expressive 3D Head Model
+# Ocular Region Reconstruction Based on FLAME
 
-This is an official [FLAME](http://flame.is.tue.mpg.de/) repository. 
+3D scan can bu used to generates high quality 3D data. However, the scan result for eyes, including eyeballs and eyebrow usually has large distortion. This code use [FLAME](http://flame.is.tue.mpg.de/) repository to reconstruct ocular region where 3D scan data is unreliable based on ocular region excluding the distorted parts. 
+
+## Setup:
+(forked from FLAME:https://github.com/Rubikplayer/flame-fitting/blob/master/README.md)
 
 We also provide [Tensorflow FLAME](https://github.com/TimoBolkart/TF_FLAME) and [PyTorch FLAME](https://github.com/HavenFeng/photometric_optimization) frameworks, and code to [convert from Basel Face Model to FLAME](https://github.com/TimoBolkart/BFM_to_FLAME).
 
@@ -81,14 +84,36 @@ make
 ### Data
 
 Download the FLAME model [MPI-IS/FLAME](https://flame.is.tue.mpg.de/downloads). You need to sign up and agree to the model license for access to the model.
+Download RCHigh_trimmed_ocular_region.obj, RCHigh_trimmed_color.ply, RCHigh_trimmed.obj from pan.baidu.com following the link bellow. Put them into ./data file
+链接：https://pan.baidu.com/s/1d5sR7DP6q0VptLLclcImDA 
+提取码：8en9 
+复制这段内容后打开百度网盘手机App，操作更方便哦
+Note: data for this project must be preprocessed because we use dlib to automatically annotate landmarks on projection of 3D face mesh. The figure in scan must face the +z axis. You can check the projection.png to see whether the scan orient in a wrong direction or not. The two .obj files should contain only vertices (no color). The .pkl file is for generating landmarks, so, it must contain color. For all three scans, the resolution of the scan should be in "cm"
 
 ### Demo
 
- * Load and evaluate FLAME model: `hello_world.py`
- * Fit FLAME to 3D landmarks: `fit_lmk3d.py`
- * Fit FLAME to a 3D scan: `fit_scan.py`
+ * you can run example.py, which will generate sample_index.npy, landmarks_3d_51_points.npy and reconstruction output fit_region_scan_result.obj under ./output 
+ * you can run find_sampler_indexes.py to generate sample_index.npy under the ./data file
+ * you can run generate_landmarks.py to generate landmarks_3d_51_points.npy under ./data file
+ * after the two file has been generated, you can run fit_scan_region.py to generate fit the region specified by sample_index.npy.
 
 Fitting a scan requires scan and FLAME model to be in the same local coordiante systems. The `fit_scan.py` script provides different options by specifying the variable `scale_unit` to convert from Meters [m] (default), Centimeters [cm], or Milimieters [mm]. Please specify the right unit when running `fit_scan.py`. If the unit of the measurement unit is unknown, choose `scale_unit = 'NA'`.
+
+<p align="center"> 
+<img src="output/snapshot03.png" width="50%">
+</p>
+
+<p align="center"> 
+<img src="output/snapshot07.png" width="50%">
+</p>
+
+<p align="center"> 
+<img src="output/snapshot08.png" width="50%">
+</p>
+
+<p align="center"> 
+<img src="output/snapshot09.png" width="50%">
+</p>
 
 ### Landmarks
 
@@ -96,7 +121,7 @@ Fitting a scan requires scan and FLAME model to be in the same local coordiante 
 <img src="data/landmarks_51_annotated.png" width="50%">
 </p>
 
-The provided demos fit FLAME to 3D landmarks or to a scan, using 3D landmarks for initialization and during fitting. Both demos use the shown 51 landmarks. Providing the landmarks in the exact order is essential.
+We project 3D scan into a 2D image and use dlib to automatically annotate landmarks on the projected image. Then, we traceback to the closest point in the scan data and mark it as a landmark.
 
 ### Citing
 
