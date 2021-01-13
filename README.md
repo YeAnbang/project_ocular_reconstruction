@@ -99,9 +99,7 @@ Note: data for this project must be preprocessed because we use dlib to automati
 
 Fitting a scan requires scan and FLAME model to be in the same local coordiante systems. The `fit_scan.py` script provides different options by specifying the variable `scale_unit` to convert from Meters [m] (default), Centimeters [cm], or Milimieters [mm]. Please specify the right unit when running `fit_scan.py`. If the unit of the measurement unit is unknown, choose `scale_unit = 'NA'`.
 
-<p align="center"> 
-<img src="output/snapshot03.png" width="50%">
-</p>
+![Image text](https://raw.githubusercontent.com/YeAnbang/project_ocular_reconstruction/main/output/snapshot03.png?token=AKVYUA5GQOO3USJZDZTGCKC7736AS)
 
 <p align="center"> 
 <img src="output/snapshot07.png" width="50%">
