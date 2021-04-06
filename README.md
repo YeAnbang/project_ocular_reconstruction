@@ -121,39 +121,3 @@ Fitting a scan requires scan and FLAME model to be in the same local coordiante 
 
 We project 3D scan into a 2D image and use dlib to automatically annotate landmarks on the projected image. Then, we traceback to the closest point in the scan data and mark it as a landmark.
 
-### Citing
-
-When using this code in a scientific publication, please cite FLAME 
-```
-@article{FLAME:SiggraphAsia2017,
-  title = {Learning a model of facial shape and expression from {4D} scans},
-  author = {Li, Tianye and Bolkart, Timo and Black, Michael. J. and Li, Hao and Romero, Javier},
-  journal = {ACM Transactions on Graphics, (Proc. SIGGRAPH Asia)},
-  volume = {36},
-  number = {6},
-  year = {2017},
-  url = {https://doi.org/10.1145/3130800.3130813}
-}
-```
-
-### License
-
-The FLAME model is under a Creative Commons Attribution license. By using this code, you acknowledge that you have read the terms and conditions (https://flame.is.tue.mpg.de/modellicense), understand them, and agree to be bound by them. If you do not agree with these terms and conditions, you must not use the code. You further agree to cite the FLAME paper when reporting results with this model.
-
-### Supported projects
-
-FLAME supports several projects such as
-* [CoMA: Convolutional Mesh Autoencoders](https://github.com/anuragranj/coma)
-* [RingNet: 3D Face Shape and Expression Reconstruction from an Image without 3D Supervision](https://github.com/soubhiksanyal/RingNet)
-* [VOCA: Voice Operated Character Animation](https://github.com/TimoBolkart/voca)
-* [Expressive Body Capture: 3D Hands, Face, and Body from a Single Image](https://github.com/vchoutas/smplify-x)
-* [ExPose: Monocular Expressive Body Regression through Body-Driven Attention](https://github.com/vchoutas/expose)
-* [GIF: Generative Interpretable Faces](https://github.com/ParthaEth/GIF)
-* [DECA: Detailed Expression Capture and Animation](https://github.com/YadiraF/DECA)
-
-FLAME is part of [SMPL-X: : A new joint 3D model of the human body, face and hands together](https://github.com/vchoutas/smplx)
-
-
-### Acknowledgement
-
-Code in `smpl_webuser` originates from [SMPL Python code](http://smpl.is.tue.mpg.de/), and code in `sbody` originates from [SMALR](https://github.com/silviazuffi/smalr_online). We thank the authors for pushing these code packages. 
