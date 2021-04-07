@@ -101,6 +101,27 @@ Fitting a scan requires scan and FLAME model to be in the same local coordiante 
 
 ![Image text](https://raw.githubusercontent.com/YeAnbang/project_ocular_reconstruction/main/output/snapshot03.png?token=AKVYUA5GQOO3USJZDZTGCKC7736AS)
 
+### RCHigh_trimmed.obj
+<p align="center"> 
+<img src="output/snapshot01.png" width="50%">
+</p>
+
+### RCHigh_trimmed_ocular_region.obj
+<p align="center"> 
+<img src="output/snapshot02.png" width="50%">
+</p>
+
+### RCHigh_trimmed_color.ply
+<p align="center"> 
+<img src="output/snapshot03.png" width="50%">
+</p>
+
+### landmarks
+<p align="center"> 
+<img src="output/ldk.png" width="50%">
+</p>
+
+### output
 <p align="center"> 
 <img src="output/snapshot07.png" width="50%">
 </p>
@@ -113,11 +134,11 @@ Fitting a scan requires scan and FLAME model to be in the same local coordiante 
 <img src="output/snapshot09.png" width="50%">
 </p>
 
-### Landmarks
-
 <p align="center"> 
-<img src="data/landmarks_51_annotated.png" width="50%">
+<img src="output/snapshot05.png" width="50%">
 </p>
+
+
 
 We project 3D scan into a 2D image and use dlib to automatically annotate landmarks on the projected image. Then, we traceback to the closest point in the scan data and mark it as a landmark.
 
