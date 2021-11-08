@@ -2,13 +2,33 @@
 
 3D scan can bu used to generates high quality 3D data. However, the scan result for eyes, including eyeballs and eyebrow usually has large distortion. This code use [FLAME](http://flame.is.tue.mpg.de/) repository to reconstruct ocular region where 3D scan data is unreliable based on ocular region excluding the distorted parts. 
 
+The idea is to obtain a accurate 3DMM of ocular region so that further works like attach eyelash to eyelid can be done automatically. To achieve this, we want to give more weight in modeling region around eyes. And, since the scan result for the eyeballs is inaccurate, we need to remove that region during reconstruction. Third, we provide pipline to automatically mark landmarks on 3D face model and generate face reconstruction result that focus on ocular region.
+
+To start, you need three 3D object file for the same face. A color front view scan of the face in .ply format (color_model_path in example.py). The same front view scan without color in .obj format (scan_path_unsure in example.py). The same front view scan without color and with ocular region manually removed in .obj format (scan_path_interested in example.py). 
+
+Then run:
+   example.py 
+it will generate result under ./output folder.
+
+Sample 3D face model for test can be downloaded from here.
+    https://pan.baidu.com/s/1bKKfLs8YEbYuSYkyQ5zH4g   -password：gcy6
+    https://pan.baidu.com/s/1Ez_uqpUbxer6s_I8pwGBkA   -password：d0me
+    https://pan.baidu.com/s/1223eM9mu80_NI8RTdgq96g   -password：jb0d
+    
+## Output
+<p align="center"> 
+<img src="gifs/model_variations.gif">
+</p>
+    
+# FLAME Guide
+
 ## Setup:
 (forked from FLAME:https://github.com/Rubikplayer/flame-fitting/blob/master/README.md)
 
 We also provide [Tensorflow FLAME](https://github.com/TimoBolkart/TF_FLAME) and [PyTorch FLAME](https://github.com/HavenFeng/photometric_optimization) frameworks, and code to [convert from Basel Face Model to FLAME](https://github.com/TimoBolkart/BFM_to_FLAME).
 
 <p align="center"> 
-<img src="gifs/model_variations.gif">
+<img src="output/snapshot03.png">
 </p>
 
 FLAME is a lightweight and expressive generic head model learned from over 33,000 of accurately aligned 3D scans. FLAME combines a linear identity shape space (trained from head scans of 3800 subjects) with an articulated neck, jaw, and eyeballs, pose-dependent corrective blendshapes, and additional global expression blendshapes. For details please see the [scientific publication](https://ps.is.tuebingen.mpg.de/uploads_file/attachment/attachment/400/paper.pdf)
