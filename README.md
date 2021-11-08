@@ -4,7 +4,7 @@
 
 The idea is to obtain a accurate 3DMM of ocular region so that further works like attach eyelash to eyelid can be done automatically. To achieve this, we want to give more weight in modeling region around eyes. And, since the scan result for the eyeballs is inaccurate, we need to remove that region during reconstruction. Third, we provide pipline to automatically mark landmarks on 3D face model and generate face reconstruction result that focus on ocular region.
 
-To start, you need three 3D object file for the same face. A color front view scan of the face in .ply format (color_model_path in example.py). The same front view scan without color in .obj format (scan_path_unsure in example.py). The same front view scan without color and with ocular region manually removed in .obj format (scan_path_interested in example.py). 
+To start, you need three 3D object file for the same face. A color front view scan of the face in .ply format (color_model_path in example.py). The same front view scan without color and with ocular region removed in .obj format (scan_path_unsure in example.py). The same front view scan without color and with eyeballs manually removed in .obj format (scan_path_interested in example.py). 
 
 Then run:
    example.py 
