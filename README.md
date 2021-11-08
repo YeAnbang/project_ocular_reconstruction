@@ -15,9 +15,37 @@ Sample 3D face model for test can be downloaded from here.
     https://pan.baidu.com/s/1Ez_uqpUbxer6s_I8pwGBkA   -password：d0me
     https://pan.baidu.com/s/1223eM9mu80_NI8RTdgq96g   -password：jb0d
     
+## Input
+.ply file
+<p align="center"> 
+<img src="data/Capture.PNG">
+</p>
+
+.obj file
+<p align="center"> 
+<img src="data/snapshot00.png">
+</p>
+
+.obj file with eyeballs removed
+<p align="center"> 
+<img src="data/snapshot01.png">
+</p>
+
 ## Output
 <p align="center"> 
-<img src="gifs/model_variations.gif">
+<img src="output/snapshot03.png">
+</p>
+
+<p align="center"> 
+<img src="output/snapshot04.png">
+</p>
+
+<p align="center"> 
+<img src="output/snapshot05.png">
+</p>
+
+<p align="center"> 
+<img src="output/snapshot06.png">
 </p>
     
 # FLAME Guide
@@ -28,7 +56,7 @@ Sample 3D face model for test can be downloaded from here.
 We also provide [Tensorflow FLAME](https://github.com/TimoBolkart/TF_FLAME) and [PyTorch FLAME](https://github.com/HavenFeng/photometric_optimization) frameworks, and code to [convert from Basel Face Model to FLAME](https://github.com/TimoBolkart/BFM_to_FLAME).
 
 <p align="center"> 
-<img src="output/snapshot03.png">
+<img src="gifs/model_variations.gif">
 </p>
 
 FLAME is a lightweight and expressive generic head model learned from over 33,000 of accurately aligned 3D scans. FLAME combines a linear identity shape space (trained from head scans of 3800 subjects) with an articulated neck, jaw, and eyeballs, pose-dependent corrective blendshapes, and additional global expression blendshapes. For details please see the [scientific publication](https://ps.is.tuebingen.mpg.de/uploads_file/attachment/attachment/400/paper.pdf)
